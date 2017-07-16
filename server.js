@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var path = require("path");
 
-var port = 3000;
+var PORT = 3030;
 
 var app = express();
 
@@ -21,12 +21,12 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
+// ImPORT routes and give the server access to them.
 var routes = require("./controllers/burgersController.js");
 
 app.use("/", routes);
 
-app.listen(port, function(){
-	console.log("listening on port",port);
+app.listen(PORT, function(){
+	console.log("listening on PORT",PORT);
 
 });
